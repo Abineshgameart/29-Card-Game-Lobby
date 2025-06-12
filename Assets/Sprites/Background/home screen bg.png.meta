@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 4237a55c8948fb147beda836a1121b5b
+guid: 55fdc6bad698aa843b648a6a56095993
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5619834362810283326
-    second: high-five_0
-  - first:
-      213: 711767403437285886
-    second: high-five_1
-  - first:
-      213: -7735133121757129613
-    second: high-five_2
-  - first:
-      213: 2961360261643299763
-    second: high-five_3
-  - first:
-      213: 8890684980573679913
-    second: high-five_4
+      213: -8951133396312198981
+    second: 58596858_9362964_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: high-five_0
+      name: 58596858_9362964_0
       rect:
         serializedVersion: 2
-        x: 150
-        y: 421
-        width: 62
-        height: 62
+        x: 182
+        y: 364
+        width: 1665
+        height: 1245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,96 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3537dbe399adfd40800000000000000
-      internalID: 5619834362810283326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-five_1
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 451
-        width: 32
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef1e49caea4b0e900800000000000000
-      internalID: 711767403437285886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-five_2
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 421
-        width: 62
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 374de43886947a490800000000000000
-      internalID: -7735133121757129613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-five_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 302
-        height: 392
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3bbe43fc77dd81920800000000000000
-      internalID: 2961360261643299763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-five_4
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 0
-        width: 236
-        height: 361
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 921befc82ee026b70800000000000000
-      internalID: 8890684980573679913
+      spriteID: bb0fca7e99f27c380800000000000000
+      internalID: -8951133396312198981
       vertices: []
       indices: 
       edges: []
@@ -235,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      high-five_0: 5619834362810283326
-      high-five_1: 711767403437285886
-      high-five_2: -7735133121757129613
-      high-five_3: 2961360261643299763
-      high-five_4: 8890684980573679913
+      58596858_9362964_0: -8951133396312198981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
