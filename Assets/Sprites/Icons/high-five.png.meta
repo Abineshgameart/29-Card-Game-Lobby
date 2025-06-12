@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 894c74bff11dd064895b9c606f9bcb4c
+guid: 4237a55c8948fb147beda836a1121b5b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 122804223019638099
-    second: user_0
+      213: 5619834362810283326
+    second: high-five_0
   - first:
-      213: -4360855136426164607
-    second: user_1
+      213: 711767403437285886
+    second: high-five_1
+  - first:
+      213: -7735133121757129613
+    second: high-five_2
+  - first:
+      213: 2961360261643299763
+    second: high-five_3
+  - first:
+      213: 8890684980573679913
+    second: high-five_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: user_0
+      name: high-five_0
       rect:
         serializedVersion: 2
-        x: 131
-        y: 263
-        width: 250
-        height: 249
+        x: 150
+        y: 421
+        width: 62
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35dd00a4ac944b100800000000000000
-      internalID: 122804223019638099
+      spriteID: e3537dbe399adfd40800000000000000
+      internalID: 5619834362810283326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: user_1
+      name: high-five_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 0
-        width: 444
-        height: 254
+        x: 240
+        y: 451
+        width: 32
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +149,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18e7164bb512b73c0800000000000000
-      internalID: -4360855136426164607
+      spriteID: ef1e49caea4b0e900800000000000000
+      internalID: 711767403437285886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high-five_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 421
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374de43886947a490800000000000000
+      internalID: -7735133121757129613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high-five_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 302
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbe43fc77dd81920800000000000000
+      internalID: 2961360261643299763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high-five_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 236
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 921befc82ee026b70800000000000000
+      internalID: 8890684980573679913
       vertices: []
       indices: 
       edges: []
@@ -160,8 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      user_0: 122804223019638099
-      user_1: -4360855136426164607
+      high-five_0: 5619834362810283326
+      high-five_1: 711767403437285886
+      high-five_2: -7735133121757129613
+      high-five_3: 2961360261643299763
+      high-five_4: 8890684980573679913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
