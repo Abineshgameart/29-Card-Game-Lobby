@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8554323789354447874}
   - component: {fileID: 5236105462587937744}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CoinImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1118515096223586016}
   - component: {fileID: 1237181022128189067}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CoinTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
