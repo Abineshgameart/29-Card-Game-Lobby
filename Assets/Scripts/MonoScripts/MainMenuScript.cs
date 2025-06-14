@@ -20,7 +20,7 @@ public class MainMenuScript : MonoBehaviour
     public CanvasGroup profileSettingCanvasG;
     public CanvasGroup storeCanvasG;
 
-    public SpriteRenderer cardBG;
+    public CanvasGroup cardBG;
 
 
     public Animator animTrans;
@@ -111,18 +111,12 @@ public class MainMenuScript : MonoBehaviour
         {
             fadeAnimScript.FadeOut(storeCanvasG);
         }
-        if (cardBG.color.a != 0f)
+        if (cardBG.alpha != 0f)
         {
-            fadeAnimScript.SpriteFadeOut(cardBG);
+            fadeAnimScript.FadeOut(cardBG);
         }
 
         fadeAnimScript.FadeOut(nameIconCanvasG);
-
-        if (cardBG.color.a != 0f)
-        {
-            fadeAnimScript.SpriteFadeOut(cardBG);
-        }
-
 
         yield return new WaitForSeconds(1f);
         fadeAnimScript.FadeIn(profileSettingCanvasG);
@@ -152,7 +146,7 @@ public class MainMenuScript : MonoBehaviour
             fadeAnimScript.FadeOut(profileSettingCanvasG);
         }
 
-        fadeAnimScript.SpriteFadeOut(cardBG);
+        fadeAnimScript.FadeOut(cardBG);
 
         yield return new WaitForSeconds(1f);
         fadeAnimScript.FadeIn(storeCanvasG);
@@ -191,9 +185,9 @@ public class MainMenuScript : MonoBehaviour
         {
             fadeAnimScript.FadeIn(nameIconCanvasG);
         }
-        if (cardBG.color.a != 1f)
+        if (cardBG.alpha != 1f)
         {
-            fadeAnimScript.SpriteFadeIn(cardBG);
+            fadeAnimScript.FadeIn(cardBG);
         }
     }
 }
