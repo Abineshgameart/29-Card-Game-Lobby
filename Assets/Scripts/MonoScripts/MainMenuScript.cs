@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     // Private
+    private AudioManager audioManager;
     [SerializeField]private GameObject Matching;
     FadeAnimScript fadeAnimScript;
 
@@ -21,7 +22,13 @@ public class MainMenuScript : MonoBehaviour
 
     public SpriteRenderer cardBG;
 
+
     public Animator animTrans;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,6 +51,7 @@ public class MainMenuScript : MonoBehaviour
     // =====  Play Online  =====
     public void PlayOnline()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         StartCoroutine(LoadMatch("PlayOnline"));
     }
 
@@ -69,6 +77,7 @@ public class MainMenuScript : MonoBehaviour
     // =====  Play with Friends  =====
     public void PlayWithFriends()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         if (!roomSystemWindow.gameObject.activeSelf)
         {
             roomSystemWindow.gameObject.SetActive(true);
@@ -84,6 +93,7 @@ public class MainMenuScript : MonoBehaviour
     // =====  Profile Setting  =====
     public void ProfileSetting()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         if (profileSettingCanvasG.alpha == 0f)
         {
             StartCoroutine(ProfileSettingCall());
@@ -127,6 +137,7 @@ public class MainMenuScript : MonoBehaviour
     // =====  Store  =====
     public void Store()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         StartCoroutine(StoreCalling());
     }
 
@@ -156,6 +167,7 @@ public class MainMenuScript : MonoBehaviour
     // =====  Lobby  =====
     public void Lobby()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         StartCoroutine(LobbyCalling());
     }
 

@@ -9,16 +9,22 @@ using UnityEngine.UI;
 public class ProfileEditScript : MonoBehaviour
 {
     // Public
+    private AudioManager audioManager;
     public GameObject profileNameEditWindow;
     public TMP_InputField nameField;
     public TextMeshProUGUI[] profileNameTxt;
 
     public GameObject avatarEditWindowToggle;
     public Image[] avatarImgs;
-    public Sprite[] avatarSprites;
+    public Avatars avatars;
+    //public Image editPanelAvatarImg;
+
+    public LoadingDataScript loadingDataScript;
 
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         if (profileNameEditWindow != null)
         {
             profileNameEditWindow.SetActive(false);
@@ -29,10 +35,17 @@ public class ProfileEditScript : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        loadingDataScript.AvatarLoading(avatarImgs[1]);
+        loadingDataScript.LoadingProfileName(profileNameTxt[1]);
+    }
+
     // =====  Name Edit  =====
 
     public void NameEditWindowToggle()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         if (profileNameEditWindow != null)
         {
             if(!profileNameEditWindow.gameObject.activeSelf)
@@ -47,6 +60,7 @@ public class ProfileEditScript : MonoBehaviour
 
     public void ChangeName ()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         string newName = nameField.text;
 
         foreach (TextMeshProUGUI text in profileNameTxt)
@@ -64,6 +78,7 @@ public class ProfileEditScript : MonoBehaviour
 
     public void AvatarEditWindowToggle()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         if (!avatarEditWindowToggle.gameObject.activeSelf)
         {
             avatarEditWindowToggle.gameObject.SetActive(true);
@@ -76,9 +91,10 @@ public class ProfileEditScript : MonoBehaviour
 
     public void SelectAvatar(int index)
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         foreach (Image image in avatarImgs)
         {
-            image.sprite = avatarSprites[index];
+            image.sprite = avatars.avatarSprites[index];
         }
 
         PlayerPrefs.SetInt("AvatarIndex", index);
@@ -89,6 +105,7 @@ public class ProfileEditScript : MonoBehaviour
 
     public void UploadImage()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         var paths = StandaloneFileBrowser.OpenFilePanel("Choose an Image", "", "png,jpg,jpeg", false);
 
         if (paths.Length > 0 && File.Exists(paths[0]))
