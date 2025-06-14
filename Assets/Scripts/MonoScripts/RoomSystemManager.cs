@@ -50,6 +50,17 @@ public class RoomSystemManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public void ToggleJoinRoomTxtWindow()
+    {
+        if (!joinRoomTxtWindow.gameObject.activeSelf)
+        {
+            joinRoomTxtWindow.gameObject.SetActive(true);
+        }
+        else
+        {
+            joinRoomTxtWindow.gameObject.SetActive(false);
+        }
+    }
 
 
     public void CreateRoom()
@@ -61,5 +72,17 @@ public class RoomSystemManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinRoom(joinRoomNameInput.text);
     }
- 
+
+    public void JoinRoomInList(string RoomName)
+    {
+        PhotonNetwork.JoinRoom(RoomName);
+    }
+
+    public override void OnJoinedRoom()
+    {
+        PhotonNetwork.LoadLevel("PlayWithFriends");
+    }
+
+
 }
+

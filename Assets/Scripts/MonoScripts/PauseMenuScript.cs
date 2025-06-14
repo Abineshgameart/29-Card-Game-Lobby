@@ -11,6 +11,8 @@ public class PauseMenuScript : MonoBehaviour
     public Animator animTrans;
     // Private
 
+    
+    
     private void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
