@@ -5,6 +5,7 @@ using UnityEngine;
 public class PurchaseScript : MonoBehaviour
 {
     // private 
+    private AudioManager audioManager;
     private int coins;
 
     // Public
@@ -23,6 +24,11 @@ public class PurchaseScript : MonoBehaviour
     public TextMeshProUGUI CoinsTxt;
     public CanvasGroup purchasedSuccessMsgcanvasG;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         Coins = PlayerPrefs.GetInt("PlayerCoins", 10000);
@@ -35,6 +41,7 @@ public class PurchaseScript : MonoBehaviour
     
     public void PurchaseCoins(int index)
     {
+        audioManager.PlaySFX(audioManager.coinPurchased);
         Coins += coinbundles[index];
         Debug.Log("Purchased");
 

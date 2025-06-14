@@ -16,32 +16,32 @@ public class LoadingDataScript : MonoBehaviour
     // Public 
     public TextMeshProUGUI coinsTxt;
     public TextMeshProUGUI profileNameTxt;
-    public Image avatarImg;
-    public Sprite[] avatarSprites; 
+    public Image avatarImg; 
+    public Avatars avatars;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        LoadingCoins();
+        LoadingCoins(coinsTxt);
 
-        LoadingProfileName();
+        LoadingProfileName(profileNameTxt);
 
-        AvatarLoading();
+        AvatarLoading(avatarImg);
     }
 
-    private void LoadingCoins()
+    public void LoadingCoins(TextMeshProUGUI changeCoinsTxt)
     {
         coins = PlayerPrefs.GetInt("PlayerCoins", 10000);
-        coinsTxt.text = coins.ToString();
+        changeCoinsTxt.text = coins.ToString();
     }
 
-    private void LoadingProfileName()
+    public void LoadingProfileName(TextMeshProUGUI changeProfileNameTxt)
     {
         profileName = PlayerPrefs.GetString("ProfileName", "XXXYYY");
-        profileNameTxt.text = profileName;
+        changeProfileNameTxt.text = profileName;
     }
 
-    private void AvatarLoading()
+    public void AvatarLoading(Image changeAvatar)
     {
         avatarIndex = PlayerPrefs.GetInt("AvatarIndex", 0);
 
@@ -56,11 +56,11 @@ public class LoadingDataScript : MonoBehaviour
             Sprite newSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
 
             // Set to Image
-            avatarImg.sprite = newSprite;
+            changeAvatar.sprite = newSprite;
         }
         else if (avatarIndex < 4)
         {
-            avatarImg.sprite = avatarSprites[avatarIndex];
+            changeAvatar.sprite = avatars.avatarSprites[avatarIndex];
         }
     }
 

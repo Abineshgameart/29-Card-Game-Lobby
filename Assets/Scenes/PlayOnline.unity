@@ -2730,10 +2730,7 @@ MonoBehaviour:
   coinsTxt: {fileID: 1120404726}
   profileNameTxt: {fileID: 1338114236}
   avatarImg: {fileID: 1338114237}
-  avatarSprites:
-  - {fileID: 21300000, guid: 834c05a0d005c3c4da52e5009482ab86, type: 3}
-  - {fileID: -2815313463123330467, guid: 77346c82059f4fb4ba638f8892511b2e, type: 3}
-  - {fileID: 5079308277628952440, guid: 685717e4c74fe164eb4b82baa5178f3d, type: 3}
+  avatars: {fileID: 11400000, guid: d4c221a8606a2154eb93031211c51bed, type: 2}
 --- !u!4 &931292631
 Transform:
   m_ObjectHideFlags: 0

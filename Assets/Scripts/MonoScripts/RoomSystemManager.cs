@@ -9,9 +9,11 @@ using UnityEngine.UIElements;
 public class RoomSystemManager : MonoBehaviourPunCallbacks
 {
     public GameObject createRoomTxtWindow;
+    public GameObject joinRoomTxtWindow;
 
 
-    public TMP_InputField roomNameInput;
+    public TMP_InputField createRoomNameInput;
+    public TMP_InputField joinRoomNameInput;
 
     public GameObject roomButtonPrefab; // Assign your Room Button prefab
     public Transform contentParent;     // Assign the Content object from ScrollView
@@ -24,6 +26,10 @@ public class RoomSystemManager : MonoBehaviourPunCallbacks
         if (createRoomTxtWindow != null)
         {
             createRoomTxtWindow.SetActive(false);
+        }
+        if (joinRoomTxtWindow != null)
+        {
+            joinRoomTxtWindow.SetActive(false);
         }
 
         if (!PhotonNetwork.IsConnected)
@@ -48,63 +54,12 @@ public class RoomSystemManager : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
-        if (string.IsNullOrEmpty(roomNameInput.text))
-        {
-            return;
-        }
-
-        generatedRoomCode = GenerateNumericRoomCode();
-
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 4;
-
-        Hashtable customProperties = new Hashtable();
-        customProperties.Add("RoomCode", generatedRoomCode);
-
-        roomOptions.CustomRoomProperties = customProperties;
-
-
-        PhotonNetwork.CreateRoom(roomNameInput.text, roomOptions);
-
-        ToggleCreateRoomTxtWindow();
-
+        PhotonNetwork.CreateRoom(createRoomNameInput.text);
     }
 
-    private string GenerateNumericRoomCode()
+    public void JoinRoom()
     {
-        int length = 5;
-        string code = "";
-
-        for (int i = 0; i < length; i++)
-        {
-            code += Random.Range(0, 10).ToString();
-        }
-
-        return code;
+        PhotonNetwork.JoinRoom(joinRoomNameInput.text);
     }
-
-
-    public override void OnCreatedRoom()
-    {
-         // Instantiate button in the Scroll View
-        GameObject roomButton = Instantiate(roomButtonPrefab, contentParent);
-
-        // Get and set texts on the button
-        roomButton.transform.Find("RoomName").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.Name;
-        roomButton.transform.Find("RoomCode").GetComponent<Text>().text = "Code: " + generatedRoomCode;
-
-        
-    }
-
-    public override void OnCreateRoomFailed(short returnCode, string message)
-    {
-        Debug.LogError("Room Creation Failed: " + message);
-    }
-
-    public override void OnConnectedToMaster()
-    {
-        Debug.Log("Connected to Photon Master Server");
-        PhotonNetwork.JoinLobby();
-    }
-
+ 
 }

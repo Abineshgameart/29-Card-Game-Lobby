@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class PauseMenuScript : MonoBehaviour
 {
     // Public
+    private AudioManager audioManager;
     public GameObject pauseMenuWindow;
     public Animator animTrans;
     // Private
 
     private void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         if (pauseMenuWindow != null)
         {
             pauseMenuWindow.SetActive(false);
@@ -20,6 +22,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void TogglePauseMenu()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         if (!pauseMenuWindow.gameObject.activeSelf)
         {
             pauseMenuWindow.gameObject.SetActive(true);
@@ -32,6 +35,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void LeaveMatch()
     {
+        audioManager.PlaySFX(audioManager.buttonClick);
         StartCoroutine(LeavingMatch());
     }
 
