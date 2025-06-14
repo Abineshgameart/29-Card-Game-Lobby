@@ -8,6 +8,10 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField]private GameObject Matching;
     FadeAnimScript fadeAnimScript;
 
+    private int coins;
+
+    // Public
+    public GameObject roomSystemWindow;
     public CanvasGroup nameIconCanvasG;
     public CanvasGroup lobbyBtnCanvasG;
     
@@ -17,17 +21,23 @@ public class MainMenuScript : MonoBehaviour
 
     public SpriteRenderer cardBG;
 
-    // Public
     public Animator animTrans;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        coins = PlayerPrefs.GetInt("PlayerCoins", 10000);
+
         if (Matching != null && Matching.activeSelf)
         {
             Matching.SetActive(false);
         }
         fadeAnimScript = GetComponent<FadeAnimScript>();
+
+        if(roomSystemWindow != null )
+        {
+            roomSystemWindow.SetActive(false);
+        }
     }
 
     // Menus Function
@@ -46,11 +56,29 @@ public class MainMenuScript : MonoBehaviour
         Matching.SetActive(true);
         animTrans.SetBool("MatchLoading", true);
 
+        coins -= 500;
+        PlayerPrefs.SetInt("PlayerCoins", coins);
+        PlayerPrefs.Save();
+
         yield return new WaitForSeconds(5f);
         animTrans.SetBool("MatchLoading", false);
         SceneManager.LoadScene(sceneName);
 
     }
+
+    // =====  Play with Friends  =====
+    public void PlayWithFriends()
+    {
+        if (!roomSystemWindow.gameObject.activeSelf)
+        {
+            roomSystemWindow.gameObject.SetActive(true);
+        }
+        else
+        {
+            roomSystemWindow.gameObject.SetActive(false);
+        }
+    }
+
 
 
     // =====  Profile Setting  =====
@@ -79,9 +107,13 @@ public class MainMenuScript : MonoBehaviour
         }
 
         fadeAnimScript.FadeOut(nameIconCanvasG);
-        fadeAnimScript.SpriteFadeOut(cardBG);
 
-        
+        if (cardBG.color.a != 0f)
+        {
+            fadeAnimScript.SpriteFadeOut(cardBG);
+        }
+
+
         yield return new WaitForSeconds(1f);
         fadeAnimScript.FadeIn(profileSettingCanvasG);
 

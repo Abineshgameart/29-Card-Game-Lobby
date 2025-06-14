@@ -15,6 +15,8 @@ public class ShufflingPlayers : MonoBehaviour
     void Start()
     {
         RandomPlayerAssiging();
+
+
     }
 
     private void RandomPlayerAssiging()
